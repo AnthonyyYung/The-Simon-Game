@@ -53,3 +53,21 @@ body {
 }
 
 
+#start {
+  -webkit-border-radius: 12;
+  -moz-border-radius: 12;
+  border-radius: 12px;
+  font-family: 'Press Start 2P', cursive;
+  color: #FEF2BF;
+  font-size: 40px;
+  background: #011F3F;
+  padding: 11px 24px 11px 20px;
+  border: solid #515b61 5px;
+  text-decoration: none;
+}
+
+#start:hover {
+  background: #818d94;
+  text-decoration: none;
+}
+

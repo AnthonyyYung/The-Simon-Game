@@ -62,7 +62,7 @@ function animate(currentColour) {
 let started = false;
 let level = 0;
 
-$(document).keydown(function() {
+$("#start").click(function() {
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
@@ -75,28 +75,30 @@ function checkAnswer(currentLevel) {
     console.log("Success!");
 
     if (userClickedPattern.length === gamePattern.length) {
-      setTimeout(nextSequence, 1000);
+      setTimeout(nextSequence, 1500);
     }
   } else {
     console.log("Wrong");
     let wrong = new Audio("sounds/wrong.mp3");
     wrong.play();
 
-    $("#level-title").text("Game Over, Press Any Key to Restart")
+    $("#level-title").text("Game Over, Press Start Button to Restart")
 
     $("body").addClass("game-over");
+
     setTimeout(function(){
       $("body").removeClass("game-over");
-    }, 100);
+    }, 100)
 
     startOver();
-
   }
 }
+
 
 function startOver(){
   level = 0;
   gamePattern = [];
+  userClickedPattern = [];
   started = false;
 }
 
